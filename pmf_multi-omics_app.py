@@ -155,6 +155,7 @@ def page_overview():
 
     # Figure gallery placeholder
     st.markdown("## Figure Gallery")
+    st.image("assets/fig1_genome.png", caption="Fig. 1 — Morphology and genome features of CRC")
     st.markdown('<div class="placeholder">📊 Figure gallery placeholder — add figure image paths to <code>content_config.yaml</code> under a <code>figures</code> key and render with <code>st.image()</code>.</div>', unsafe_allow_html=True)
 
     fig_captions = [
