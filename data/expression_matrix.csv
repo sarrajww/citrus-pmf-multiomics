@@ -1,0 +1,11 @@
+gene_id,gene_name,annotation,pericarp_early_r1,pericarp_early_r2,pericarp_early_r3,pericarp_mid_r1,pericarp_mid_r2,pericarp_mid_r3,pericarp_late_r1,pericarp_late_r2,pericarp_late_r3,leaf_r1,leaf_r2,leaf_r3,module,r_nobiletin,r_tangeretin
+CrOMT01,CrOMT1,O-methyltransferase,120.3,118.7,122.1,890.2,875.4,901.3,2340.1,2289.7,2401.2,45.2,48.1,43.7,PMF_module,0.94,0.91
+CrOMT02,CrOMT2,O-methyltransferase,98.1,102.3,95.6,750.3,742.1,768.9,1980.4,1934.2,2015.7,38.4,41.2,36.9,PMF_module,0.89,0.87
+CrOMT03,CrOMT3,O-methyltransferase,45.2,43.7,47.1,210.4,198.7,220.1,450.3,441.2,462.8,89.4,92.1,86.7,other_module,0.32,0.28
+CrCYP01,CrCYP450-1,Cytochrome P450,230.4,225.1,238.7,1200.3,1189.4,1215.7,3100.2,3045.8,3178.4,55.1,58.3,52.6,PMF_module,0.96,0.88
+CrCYP02,CrCYP450-2,Cytochrome P450,189.3,182.7,195.4,980.1,964.3,997.8,2560.4,2498.7,2621.3,67.4,70.2,64.8,PMF_module,0.91,0.93
+CrCYP03,CrCYP450-3,Cytochrome P450,78.4,81.2,76.3,320.4,308.7,334.2,680.1,665.4,697.3,145.3,151.2,139.8,other_module,0.21,0.19
+CrMYB01,CrMYB1,MYB transcription factor,340.2,332.1,348.7,1560.4,1534.2,1589.3,4020.1,3945.7,4098.4,78.3,82.1,75.4,PMF_module,0.93,0.90
+CrMYB02,CrMYB2,MYB transcription factor,156.3,149.7,162.8,690.4,675.1,708.2,1780.3,1742.6,1818.9,234.1,241.3,228.4,other_module,-0.15,-0.18
+CrF3H01,CrF3H,Flavanone 3-hydroxylase,567.3,554.1,580.8,2340.1,2289.4,2395.7,5670.2,5534.8,5812.4,123.4,129.1,118.7,PMF_module,0.88,0.85
+CrFNSII,CrFNSII,Flavone synthase II,423.1,412.4,434.8,1890.3,1856.7,1924.2,4560.1,4478.3,4642.7,98.4,103.2,94.7,PMF_module,0.92,0.89

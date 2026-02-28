@@ -1,0 +1,9 @@
+gene_id,gene_name,gene_family,chromosome,start,end,strand,module,pearson_r_nobiletin,pearson_r_tangeretin,module_membership,phylo_clade,in_vitro_validated,validation_substrate,validation_product,km_um,vmax_pmol_min_mg,priority_rank,notes
+CrOMT01,CrOMT1,SABATH-OMT,Chr3,12345678,12348901,+,PMF_module,0.94,0.91,0.92,Clade_A_PMF,TRUE,Apigenin,Nobiletin-precursor,18.4,234.7,1,Top candidate; confirmed 3'-O-methylation
+CrCYP01,CrCYP450-1,CYP706,Chr5,45678901,45683210,-,PMF_module,0.96,0.88,0.94,CYP706A,TRUE,Naringenin,Eriodictyol,24.7,189.3,2,Confirmed hydroxylation activity
+CrOMT02,CrOMT2,SABATH-OMT,Chr3,12401234,12404567,+,PMF_module,0.89,0.87,0.88,Clade_A_PMF,TRUE,Apigenin,Tangeretin-precursor,31.2,156.8,3,Confirmed 4'-O-methylation
+CrCYP02,CrCYP450-2,CYP706,Chr7,23456789,23461234,+,PMF_module,0.91,0.93,0.90,CYP706A,FALSE,NA,NA,NA,NA,4,Candidate; validation pending
+CrMYB01,CrMYB1,R2R3-MYB,Chr1,8901234,8903456,-,PMF_module,0.93,0.90,0.91,subgroup_4,FALSE,NA,NA,NA,NA,5,TF candidate; promoter motif confirmed
+CrOMT04,CrOMT4,SABATH-OMT,Chr3,12501234,12504321,+,PMF_module,0.83,0.79,0.81,Clade_B,FALSE,NA,NA,NA,NA,6,Lower priority; validation pending
+CrF3H01,CrF3H,2OGD,Chr9,34567890,34571234,+,PMF_module,0.88,0.85,0.86,F3H_clade,FALSE,NA,NA,NA,NA,7,Upstream pathway; known activity
+CrFNSII,CrFNSII,CYP93,Chr2,56789012,56793456,-,PMF_module,0.92,0.89,0.90,CYP93B,FALSE,NA,NA,NA,NA,8,Flavone synthase; candidate for flux control
