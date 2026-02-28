@@ -8,11 +8,11 @@ study:
   authors: "[NEED author list]"
   summary: >
     This study decodes the biosynthetic pathway for polymethoxylated flavonoids (PMFs)
-    in Chenpi (Citrus reticulata cv. Chachiensis) using a chromosome-level genome assembly
+    in Guangchenpi (Citrus reticulata cv. Chachiensis) using a chromosome-level genome assembly
     integrated with transcriptomics, metabolomics, and co-expression network analysis.
     A high-quality reference genome (~[NEED size] Mb, [NEED chromosome count] pseudochromosomes)
     was produced and anchored gene-metabolite correlations identified key O-methyltransferase
-    (OMT) and CYP450 enzyme candidates. Functional validation via heterologous expression
+    (OMT) candidates. Functional validation via heterologous expression
     confirmed enzymatic activities for prioritized candidates, establishing a mechanistic
     foundation for PMF engineering in medicinal citrus.
 
@@ -54,8 +54,8 @@ findings:
     claim: "A chromosome-level reference genome was assembled for C. reticulata cv. Chachiensis"
     evidence_type: "Genome assembly + Hi-C scaffolding + BUSCO validation"
     artifacts: ["Genome FASTA", "GFF3 annotation", "BUSCO report"]
-    why_it_matters: "First high-quality genome for this commercially important Chenpi cultivar; enables synteny and comparative analyses"
-    figure_ref: "Fig. [NEED]"
+    why_it_matters: "First high-quality genome for this important Guangchenpi cultivar; enables synteny and comparative analyses"
+    figure_ref: "Fig. Morphology and genome features of CRC"
   - id: F2
     claim: "PMF accumulation co-varies with expression of specific OMT gene subfamilies across tissues"
     evidence_type: "Pearson correlation; WGCNA module-trait analysis"
