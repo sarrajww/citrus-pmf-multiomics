@@ -26,6 +26,8 @@ def load_config(mtime: float = 0):
     with open(BASE_DIR / "content_config.yaml", "r") as f:
         return yaml.safe_load(f)
 
+config_path = BASE_DIR / "content_config.yaml"
+
 CFG = load_config(_mtime("content_config.yaml"))
 
 # ── Shared CSS ─────────────────────────────────────────────────────────────────
