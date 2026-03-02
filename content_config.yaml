@@ -57,14 +57,16 @@ findings:
     figure_ref: "Fig 1. Morphology and genome features of CRC"
   - id: F2
     claim: "PMF accumulation co-varies with expression of specific OMT gene subfamilies across tissues"
-    evidence_type: "gene expression profile in a developmental stage manner;metabolomics profile; Pearson correlation"
+    evidence_type: "gene expression profile in a developmental stage manner; metabolomics profile; Pearson correlation"
     artifacts: ["Expression matrix", "Metabolite table", "Co-expression module membership file"]
     why_it_matters: "Anchors candidate selection in quantitative gene-metabolite relationships rather than homology alone"
+    figure_ref: "Fig. 3: OMT genes in CRC. and Fig. 4:The relative content of 29 PMFs in CRC."
   - id: F3
     claim: "CcOMT1 demonstrated 3’-position methyltransferase activity on PMF substrates in vitro"
     evidence_type: "Heterologous expression (E. coli BL21(DE3)) + LC-MS product verification"
     artifacts: ["Protein expression plasmids", "LC-MS spectra", "Kinetic parameters table","transient overexpression","VIGS"]
     why_it_matters: "Functional confirmation distinguishes active enzymes from non-functional paralogs"
+    figure_ref: "Fig. 5: Catalytic function and mutants of CcOMT1. and Fig. 6: Transient overexpression, silencing and functional analysis of CcOMT1."
   - id: F4
     claim: "AP2/ERF transcription factors co-regulate PMF biosynthesis genes in a developmental stage-specific manner"
     evidence_type: "Pearson correlation; WGCNA module-trait analysis; co-expression network; correlation network"
