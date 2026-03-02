@@ -160,7 +160,8 @@ def page_overview():
 
     # Figure gallery placeholder
     st.markdown("## Figure Gallery")
-    st.image("assets/fig1_genome.png", caption="Fig. 1 — Hi-C contact map and assembly statistics")
+    st.image("assets/fig1_genome.png", caption="Fig. 1 — Fig1. Morphology and genome features of C. reticulata cv. Chachiensis")
+    st.image("assets/fig7_network.png", caption="Fig. 7 — Fig7. The potential gene regulation network of PMF biosynthesis")
     st.divider()
 
     # Glossary
