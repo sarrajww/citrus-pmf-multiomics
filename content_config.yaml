@@ -134,7 +134,7 @@ impact:
     - "Phylogenomic evidence for tandem duplication as driver of OMT family diversification in Citrus"
   resource:
     - "Publicly deposited genome assembly and annotation (accession:GWHERQK00000000 and GWHERPZ00000000)"
-    - "Raw sequencing data available via accession: CNP0003922 and CNP0003929)"
+    - "Raw sequencing data available via accession: CNGBdb CNP0003922 and CNP0003929)"
     - "Metabolomics dataset deposited in MetaboLights accession: MTBLS9832)"
   translational:
     - "Validated OMT enzymes are direct candidates for metabolic engineering of PMF production"
@@ -149,18 +149,6 @@ impact:
 
 resources:
   paper_doi: "https://doi.org/10.1038/s41467-024-48235-y"
-  github: "[NEED GitHub URL]"
-  genome_accession: "[NEED — e.g., NCBI GCA_XXXXXXXXX]"
+  genome_accession: "GWHERQK00000000"
   rnaseq_accession: " CNGBdb: CNP0003922"
   metabolomics_accession: "MetaboLights:MTBLS9832"
-  supplementary_tables:
-    - label: "Table S1 — Genome assembly statistics"
-      url: "[NEED]"
-    - label: "Table S2 — Gene annotation summary"
-      url: "[NEED]"
-    - label: "Table S3 — Differentially expressed genes"
-      url: "[NEED]"
-    - label: "Table S4 — Metabolite annotation list"
-      url: "[NEED]"
-    - label: "Table S5 — Candidate gene final list with evidence scores"
-      url: "[NEED]"
