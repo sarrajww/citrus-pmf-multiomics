@@ -1,6 +1,6 @@
 """
-Multi-Omics Research Showcase — Citrus reticulata cv. Chachiensis PMF Biosynthesis
-Based on: Nature Communications paper (DOI: https://www.nature.com/articles/s41467-024-48235-y)
+Multi-Omics Research Showcase — *Citrus reticulata* cv. Chachiensis PMF Biosynthesis
+Based on: *Nature Communications* paper (DOI: https://www.nature.com/articles/s41467-024-48235-y)
 """
 
 import streamlit as st
@@ -241,7 +241,7 @@ def page_study_design():
     st.markdown("## Validation Strategy")
     st.markdown(""" 
     were validated by:
-    1. **Heterologous expression** in *E. coli* BL21 or *S. cerevisiae* with codon-optimized ORFs
+    1. **Heterologous expression** in *E. coli* BL21
     2. **In vitro enzyme assay** using recombinant protein + PMF substrates + SAM cofactor
     3. **LC-MS/MS product verification** confirming methylated product identity and retention time
     4. **Kinetic characterization** (Km, Vmax) for confirmed candidates
