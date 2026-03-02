@@ -151,6 +151,7 @@ def page_overview():
     items = [
     {"img": "assets/fig1_genome.png", "cap": "Fig. 1 — Fig1. Morphology and genome features of C. reticulata cv. Chachiensis (CRC)"},
     {"img": "assets/fig3_OMT.png", "cap": "Fig. 3 — Fig3. OMT genes in CRC."},
+    {"img": "assets/fig4_PMF.png", "cap": "Fig. 4 — The relative content of 29 PMFs in CRC."},
     {"img": "assets/fig5_CcOMT1.png", "cap": "Fig. 5 — Fig5. Catalytic function and mutants of CcOMT1."},
     {"img": "assets/fig7_network.png", "cap": "Fig7. The potential gene regulation network of PMF biosynthesis"},
 ]
