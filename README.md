@@ -7,10 +7,6 @@ multiomics_app/
 ├── app.py                  # Main Streamlit application (single file)
 ├── content_config.yaml     # All text content, citations, findings, impact — edit here
 ├── requirements.txt        # Python dependencies
-├── data/
-│   ├── expression_matrix.csv   # Mock expression data (replace with real)
-│   ├── metabolite_table.csv    # Mock metabolite data (replace with real)
-│   └── candidate_genes.csv     # Mock candidate list (replace with real)
 ├── assets/                 # Place figure images here (PNG/SVG)
 │   └── .gitkeep
 └── README.md               # This file
