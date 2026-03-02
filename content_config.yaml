@@ -54,23 +54,21 @@ findings:
     evidence_type: "Genome assembly + Hi-C scaffolding + BUSCO validation"
     artifacts: ["Genome FASTA", "GFF3 annotation", "BUSCO report"]
     why_it_matters: "First high-quality genome for this important Guangchenpi cultivar; enables synteny and comparative analyses"
-    figure_ref: "Fig1. Morphology and genome features of CRC"
+    figure_ref: "Fig 1. Morphology and genome features of CRC"
   - id: F2
     claim: "PMF accumulation co-varies with expression of specific OMT gene subfamilies across tissues"
     evidence_type: "gene expression profile in a developmental stage manner;metabolomics profile; Pearson correlation"
     artifacts: ["Expression matrix", "Metabolite table", "Co-expression module membership file"]
     why_it_matters: "Anchors candidate selection in quantitative gene-metabolite relationships rather than homology alone"
-    figure_ref: "Fig 2.OMT genes in CRC; Fig 3. The relative content of 29 PMFs in CRC; Supplementary Fig. 29"
   - id: F3
     claim: "CcOMT1 demonstrated 3’-position methyltransferase activity on PMF substrates in vitro"
     evidence_type: "Heterologous expression (E. coli BL21(DE3)) + LC-MS product verification"
     artifacts: ["Protein expression plasmids", "LC-MS spectra", "Kinetic parameters table","transient overexpression","VIGS"]
     why_it_matters: "Functional confirmation distinguishes active enzymes from non-functional paralogs"
-    figure_ref: "Fig 5. Catalytic function and mutants of CcOMT1; Fig. 6: Transient overexpression, silencing and functional analysis of CcOMT1."
-  - id: F5
+  - id: F4
     claim: "AP2/ERF transcription factors co-regulate PMF biosynthesis genes in a developmental stage-specific manner"
     evidence_type: "Pearson correlation; WGCNA module-trait analysis; co-expression network; correlation network"
-    artifacts: ["Regulatory network edge list", "Motif enrichment table"]
+    artifacts: ["Regulatory network edge list", "Expression matrix of core regulated components on core vs non-core regions" ]
     why_it_matters: "Identifies transcriptional control nodes for engineering efforts"
     figure_ref: "Fig.7 The potential gene regulation network of PMF biosynthesis"
 
