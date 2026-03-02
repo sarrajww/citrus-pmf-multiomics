@@ -213,17 +213,19 @@ def page_study_design():
     st.markdown("## Samples and Contrasts")
     col1, col2 = st.columns(2)
     with col1:
-        st.markdown("**Tissues sampled**")
+        st.markdown("**Tissues sampled for transcriptomic and metabolomic integrated analysis**")
         samples = {
-            "Tissue": ["Pericarp (early)", "Pericarp (mid)", "Pericarp (late)"],
-            "Developmental stage": ["Young fruit", "Nearly mature fruit", "Mature fruit"],
-            "Replicates": ["5", "5", "5"],
+            "Tissue": ["Young fruit","Young fruit","Pericarp (early)", "Pericarp (mid)", "Pericarp (late)"],
+            "Developmental stage": ["Apr", "May", "Jun", "Sep", "Nov"],
+            "Replicates": ["3", "3", "3", "3", "3"],
         }
         st.dataframe(pd.DataFrame(samples), use_container_width=True, hide_index=True)
     with col2:
         st.markdown("**Key contrasts**")
         st.markdown("""
-        - Pericarp early vs. late (developmental PMF accumulation)   
+        - Pericarp early vs. late (developmental PMF accumulation)
+        - Pericarp early vs. late (developmental OMT expression)
+        - Pericarp early vs. late (developmental TF expression)        
         """)
 
     st.divider()
