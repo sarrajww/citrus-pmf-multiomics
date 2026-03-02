@@ -160,26 +160,7 @@ def page_overview():
 
     # Figure gallery placeholder
     st.markdown("## Figure Gallery")
-    st.markdown('<div class="placeholder">📊 Figure gallery placeholder — add figure image paths to <code>content_config.yaml</code> under a <code>figures</code> key and render with <code>st.image()</code>.</div>', unsafe_allow_html=True)
-
-    fig_captions = [
-        ("Fig. 1", "Genome assembly statistics and Hi-C contact heatmap"),
-        ("Fig. 2", "WGCNA co-expression modules correlated with PMF accumulation"),
-        ("Fig. 3", "Multi-omics integration workflow and candidate prioritization"),
-        ("Fig. 4", "Phylogenetic tree of OMT gene family with validated candidates highlighted"),
-        ("Fig. 5", "In vitro enzyme assay results: LC-MS product verification"),
-    ]
-    cols = st.columns(5)
-    for col, (fig_id, caption) in zip(cols, fig_captions):
-        with col:
-            st.markdown(f"""
-            <div style="border:1px dashed #cbd5e1; border-radius:8px; padding:0.6rem; text-align:center; background:#f8fafc;">
-                <div style="font-size:2rem; color:#94a3b8">🖼</div>
-                <div style="font-size:0.72rem; font-weight:700; color:#475569">{fig_id}</div>
-                <div style="font-size:0.68rem; color:#64748b">{caption}</div>
-            </div>
-            """, unsafe_allow_html=True)
-
+    st.image("assets/fig1_genome.png", caption="Fig. 1 — Hi-C contact map and assembly statistics")
     st.divider()
 
     # Glossary
