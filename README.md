@@ -32,8 +32,7 @@ multiomics_app/
 - [ ] Click Deploy
 
 ### Post-deployment
-- [ ] Verify all 7 sidebar pages render without errors
-- [ ] Test all 3 CSV download buttons
+- [ ] Verify all sidebar pages render without errors
 - [ ] Test `content_config.yaml` download button
 - [ ] Check that `[NEED ...]` placeholders render with amber/yellow warning styling (not as broken UI)
 - [ ] Share URL with collaborators for review
