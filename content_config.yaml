@@ -4,13 +4,13 @@ study:
   citation: >
     An integrated multi-omics approach reveals polymethoxylated flavonoid biosynthesis
     in Citrus reticulata cv. Chachiensis. Nature Communications (2024).
-    DOI: [NEED DOI]
-  authors: "[NEED author list]"
+    DOI: https://doi.org/10.1038/s41467-024-48235-y
+  authors: "Jiawen Wen#, Yayu Wang#, Xu Lu#, Huimin Pan#, Dian Jin, Jialing Wen, Canzhi Jin, Sunil Kumar Sahu, Jianmu Su, Xinyue Luo, Xiaohuan Jin, Jiao Zhao, Hong Wu, E-Hu Liu, Huan Liu"
   summary: >
     This study decodes the biosynthetic pathway for polymethoxylated flavonoids (PMFs)
     in Guangchenpi (Citrus reticulata cv. Chachiensis) using a chromosome-level genome assembly
     integrated with transcriptomics, metabolomics, and co-expression network analysis.
-    A high-quality reference genome (~[NEED size] Mb, [NEED chromosome count] pseudochromosomes)
+    A high-quality reference genome (~314.96 Mb, nine pseudochromosomes)
     was produced and anchored gene-metabolite correlations identified key O-methyltransferase
     (OMT) candidates. Functional validation via heterologous expression
     confirmed enzymatic activities for prioritized candidates, establishing a mechanistic
@@ -19,30 +19,29 @@ study:
 deliverables:
   - id: D1
     label: "Chromosome-level genome assembly"
-    detail: "~[NEED] Mb; [NEED] chromosomes; BUSCO completeness [NEED]%"
+    detail: "~314.96 Mb; nine chromosomes; BUSCO completeness 97.7%"
   - id: D2
     label: "Genome annotation"
-    detail: "[NEED] protein-coding genes; repeat content [NEED]%"
+    detail: "29,722 protein-coding genes; repeat content 45.04%"
   - id: D3
     label: "Transcriptome atlas"
-    detail: "RNA-seq across [NEED] tissues/developmental stages"
+    detail: "RNA-seq across 6 tissues and seven developmental stages"
   - id: D4
     label: "Metabolite profiling"
-    detail: "[NEED] metabolites detected; [NEED] PMFs annotated"
+    detail: "304 metabolites detected; 29 PMFs annotated"
   - id: D5
     label: "Co-expression modules"
-    detail: "WGCNA modules correlated with PMF accumulation"
+    detail: "WGCNA modules correlated with PMF biosynthesis"
   - id: D6
     label: "Candidate gene list"
-    detail: "[NEED] OMT/CYP450 candidates; [NEED] functionally validated"
+    detail: "47 OMT candidates; one (CcOMT1) functionally validated"
   - id: D7
     label: "Regulatory network"
-    detail: "MYB/bHLH TF candidates linked to PMF modules"
+    detail: "AP2/ERF-ERF TF candidates linked to PMF biosynthesis modules"
 
 glossary:
   PMF: "Polymethoxylated Flavonoid — flavonoids with multiple methoxy substituents; bioactive compounds in Chenpi"
   OMT: "O-methyltransferase — enzyme that transfers methyl groups to oxygen atoms on flavonoid scaffolds"
-  CYP450: "Cytochrome P450 — oxidative enzyme superfamily involved in hydroxylation and ring modifications"
   WGCNA: "Weighted Gene Co-expression Network Analysis — unsupervised clustering of co-regulated gene sets"
   BUSCO: "Benchmarking Universal Single-Copy Orthologs — genome completeness metric"
   DAG: "Directed Acyclic Graph — computational pipeline representation"
@@ -55,80 +54,72 @@ findings:
     evidence_type: "Genome assembly + Hi-C scaffolding + BUSCO validation"
     artifacts: ["Genome FASTA", "GFF3 annotation", "BUSCO report"]
     why_it_matters: "First high-quality genome for this important Guangchenpi cultivar; enables synteny and comparative analyses"
-    figure_ref: "Fig. Morphology and genome features of CRC"
+    figure_ref: "Fig1. Morphology and genome features of CRC"
   - id: F2
     claim: "PMF accumulation co-varies with expression of specific OMT gene subfamilies across tissues"
-    evidence_type: "Pearson correlation; WGCNA module-trait analysis"
+    evidence_type: "gene expression profile in a developmental stage manner;metabolomics profile; Pearson correlation"
     artifacts: ["Expression matrix", "Metabolite table", "Co-expression module membership file"]
     why_it_matters: "Anchors candidate selection in quantitative gene-metabolite relationships rather than homology alone"
-    figure_ref: "Fig. [NEED]"
+    figure_ref: "Fig 2.OMT genes in CRC; Fig 3. The relative content of 29 PMFs in CRC; Supplementary Fig. 29"
   - id: F3
-    claim: "[NEED N] OMT candidates demonstrated methyltransferase activity on PMF substrates in vitro"
-    evidence_type: "Heterologous expression (E. coli / yeast) + LC-MS product verification"
-    artifacts: ["Protein expression plasmids", "LC-MS spectra", "Kinetic parameters table"]
+    claim: "CcOMT1 demonstrated 3’-position methyltransferase activity on PMF substrates in vitro"
+    evidence_type: "Heterologous expression (E. coli BL21(DE3)) + LC-MS product verification"
+    artifacts: ["Protein expression plasmids", "LC-MS spectra", "Kinetic parameters table","transient overexpression","VIGS"]
     why_it_matters: "Functional confirmation distinguishes active enzymes from non-functional paralogs"
-    figure_ref: "Fig. [NEED]"
-  - id: F4
-    claim: "Tandem gene duplication drove expansion of the OMT family in Citrus"
-    evidence_type: "Synteny analysis; phylogenetic tree; Ks distribution"
-    artifacts: ["Synteny blocks BED", "Phylogenetic tree (Newick)", "Ks plot"]
-    why_it_matters: "Explains genetic basis for metabolic diversity within Citrus genus"
-    figure_ref: "Fig. [NEED]"
+    figure_ref: "Fig 5. Catalytic function and mutants of CcOMT1; Fig. 6: Transient overexpression, silencing and functional analysis of CcOMT1."
   - id: F5
-    claim: "MYB transcription factors co-regulate PMF biosynthesis genes in a tissue-specific manner"
-    evidence_type: "TF binding motif enrichment; co-expression network; [NEED] experimental validation type"
+    claim: "AP2/ERF transcription factors co-regulate PMF biosynthesis genes in a developmental stage-specific manner"
+    evidence_type: "Pearson correlation; WGCNA module-trait analysis; co-expression network; correlation network"
     artifacts: ["Regulatory network edge list", "Motif enrichment table"]
     why_it_matters: "Identifies transcriptional control nodes for engineering efforts"
-    figure_ref: "Fig. [NEED]"
+    figure_ref: "Fig.7 The potential gene regulation network of PMF biosynthesis"
 
 methods:
   genome:
-    inputs: ["PacBio HiFi reads", "Hi-C paired-end reads", "Illumina short reads (polishing)"]
+    inputs: ["Nanopore long reads", "Hi-C paired-end reads", "BGISEQ short reads (polishing)"]
     steps:
-      - "K-mer analysis for genome size estimation (Jellyfish / GenomeScope)"
-      - "Contig assembly (HiFiasm or SMRTLink)"
-      - "Hi-C scaffolding to chromosome scale (3D-DNA / SALSA)"
-      - "Repeat identification and masking (RepeatModeler / RepeatMasker)"
-      - "Structural annotation (MAKER / BRAKER2; ab initio + homology + RNA-seq evidence)"
+      - "K-mer analysis for genome size estimation (GenomeScope)"
+      - "Contig assembly (HiFiasm)"
+      - "Hi-C scaffolding to chromosome scale (3D-DNA)"
+      - "Repeat identification and masking (PILER / RepeatScout/ RepeatClassifier/ Tandem Repeats Finder/ RepeatModeler / RepeatMasker)"
+      - "Structural annotation (BRAKER2; ab initio + homology + RNA-seq evidence)"
       - "Functional annotation (InterProScan, OrthoFinder, KEGG KAAS)"
-      - "Quality assessment (BUSCO, LTR Assembly Index, mapping rate)"
-    tools: ["HiFiasm", "3D-DNA", "MAKER/BRAKER2", "RepeatMasker", "BUSCO", "OrthoFinder"]
+      - "Quality assessment (BUSCO, mapping rate)"
+    tools: ["HiFiasm", "3D-DNA", "BRAKER2", "RepeatMasker", "BUSCO", "OrthoFinder"]
     outputs: ["chr-level FASTA", "GFF3", "repeat library", "orthogroup assignments"]
   transcriptomics:
-    inputs: ["RNA-seq FASTQ ([NEED] samples × replicates, [NEED] tissues)"]
+    inputs: ["RNA-seq FASTQ ( 200 more RNA-seq samples)"]
     steps:
-      - "QC: FastQC + Trimmomatic adapter trimming"
-      - "Alignment to reference genome (HISAT2 / STAR)"
-      - "Transcript quantification (featureCounts / Salmon)"
-      - "Normalization: TPM and DESeq2 VST"
+      - "QC: Trimmomatic adapter trimming"
+      - "Alignment to reference genome (STAR)"
+      - "Transcript quantification (featureCounts)"
+      - "Normalization: DESeq2"
       - "Differential expression analysis (DESeq2)"
       - "WGCNA co-expression network construction"
-    tools: ["FastQC", "Trimmomatic", "HISAT2", "featureCounts", "DESeq2", "WGCNA"]
-    outputs: ["Count matrix", "TPM matrix", "DE gene lists", "Module eigengene table"]
+    tools: ["FastQC", "Trimmomatic", "STAR", "featureCounts", "DESeq2", "WGCNA"]
+    outputs: ["Count matrix", "DESeq2 log2 matrix", "DE gene lists", "Module eigengene table"]
   metabolomics:
-    inputs: ["Tissue extracts ([NEED] samples); LC-MS/MS in positive and negative mode"]
+    inputs: ["Tissue across 15 samples); LC-MS/MS in positive and negative mode"]
     steps:
       - "Raw data processing: peak picking, alignment, gap filling (MZmine / XCMS)"
-      - "Metabolite annotation: MS2 matching to databases (HMDB, MassBank, in-house PMF library)"
-      - "Quantification: peak area normalization (TIC or IS-based)"
-      - "Statistical analysis: PCA, PLS-DA for tissue separation"
+      - "Metabolite annotation: MS2 matching to databases (in-house PMF library)"
+      - "Quantification: peak area normalization"
+      - "Statistical analysis: PCA, OPLS-DA for tissue separation"
     tools: ["XCMS / MZmine", "SIRIUS+CSI:FingerID", "MetaboAnalyst"]
     outputs: ["Feature table (m/z × sample)", "Annotated metabolite list", "PCA scores"]
   integration:
-    inputs: ["TPM matrix", "Metabolite abundance table", "Module eigengene matrix"]
+    inputs: ["DESeq2 vst matrix", "Metabolite abundance table", "Module eigengene matrix"]
     steps:
       - "Pearson correlation: gene expression vs PMF metabolite levels"
       - "WGCNA module-trait correlation with PMF accumulation phenotype"
-      - "Candidate filtering: |r| > 0.8 AND module membership > 0.7 AND functional annotation = OMT/CYP450"
-      - "Phylogenetic placement of filtered candidates"
-      - "Promoter motif enrichment for co-expressed TF candidates"
-    tools: ["R (WGCNA, ggplot2)", "MEME Suite", "IQ-TREE"]
-    outputs: ["Ranked candidate gene list", "Co-expression network edge list", "Heatmaps"]
+      - "The expression profile of potential regulator genes between the core region and other regions"
+    tools: ["R (ggplot2)", "WGCNA"]
+    outputs: ["Ranked candidate gene list", "Co-expression network edge list"]
   validation:
     inputs: ["Synthesized / codon-optimized candidate ORFs"]
     steps:
       - "Cloning into expression vector (pET / pYES)"
-      - "Heterologous expression in E. coli BL21 or S. cerevisiae"
+      - "Heterologous expression in E. coli BL21"
       - "Protein purification (His-tag affinity)"
       - "In vitro enzyme assay with PMF substrates + SAM cofactor"
       - "LC-MS/MS product verification and kinetic parameter determination"
@@ -142,27 +133,26 @@ impact:
     - "Demonstrates WGCNA-guided candidate prioritization as an effective multi-omics strategy in specialized metabolism"
     - "Phylogenomic evidence for tandem duplication as driver of OMT family diversification in Citrus"
   resource:
-    - "Publicly deposited genome assembly and annotation (accession: [NEED])"
-    - "Raw sequencing data available via [NEED repository] (accession: [NEED])"
-    - "Metabolomics dataset deposited in [NEED: MetaboLights / MassIVE] (accession: [NEED])"
-    - "Code and analysis scripts available at GitHub: [NEED URL]"
+    - "Publicly deposited genome assembly and annotation (accession:GWHERQK00000000 and GWHERPZ00000000)"
+    - "Raw sequencing data available via accession: CNP0003922 and CNP0003929)"
+    - "Metabolomics dataset deposited in MetaboLights accession: MTBLS9832)"
   translational:
     - "Validated OMT enzymes are direct candidates for metabolic engineering of PMF production"
     - "Genome + candidate gene resource supports breeding programs for high-PMF Chenpi cultivars"
     - "Pathway knowledge enables synthetic biology reconstruction in heterologous hosts"
   follow_ups:
-    - "Resolve remaining uncharacterized steps (e.g., 5-O vs 6-O methylation) using additional candidate validation"
+    - "Resolve remaining uncharacterized steps using additional candidate validation"
     - "Engineer full PMF pathway in yeast chassis for de novo production"
-    - "CRISPR-based perturbation of MYB regulators to test predicted regulatory role"
+    - "CRISPR-based perturbation of AP2/ERF regulators to test predicted regulatory role"
     - "Comparative genomics across Citrus species to trace PMF pathway evolution"
-    - "Population genomics study using this genome as reference to map PMF QTLs in Chenpi germplasm"
+    - "Population genomics study using this genome as reference to map PMF QTLs in Guangchenpi germplasm"
 
 resources:
-  paper_doi: "[NEED DOI — e.g., https://doi.org/10.1038/s41467-XXXX]"
+  paper_doi: "https://doi.org/10.1038/s41467-024-48235-y"
   github: "[NEED GitHub URL]"
   genome_accession: "[NEED — e.g., NCBI GCA_XXXXXXXXX]"
-  rnaseq_accession: "[NEED — e.g., NCBI SRP/ERP number]"
-  metabolomics_accession: "[NEED — e.g., MetaboLights MTBLS number]"
+  rnaseq_accession: " CNGBdb: CNP0003922"
+  metabolomics_accession: "MetaboLights:MTBLS9832"
   supplementary_tables:
     - label: "Table S1 — Genome assembly statistics"
       url: "[NEED]"
