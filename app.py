@@ -1,6 +1,6 @@
 """
 Multi-Omics Research Showcase — Citrus reticulata cv. Chachiensis PMF Biosynthesis
-Based on: Nature Communications paper (DOI: [NEED])
+Based on: Nature Communications paper (DOI: https://www.nature.com/articles/s41467-024-48235-y)
 """
 
 import streamlit as st
@@ -125,11 +125,6 @@ with st.sidebar:
     st.divider()
     page = st.radio("Navigate", PAGES, label_visibility="collapsed")
     st.divider()
-    st.markdown("**Data files**")
-    st.markdown("- `data/expression_matrix.csv`")
-    st.markdown("- `data/metabolite_table.csv`")
-    st.markdown("- `data/candidate_genes.csv`")
-    st.divider()
     st.markdown("<small>Content populated from `content_config.yaml`</small>", unsafe_allow_html=True)
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -204,7 +199,7 @@ def page_study_design():
     # Biological question
     st.markdown("## Biological Question")
     st.markdown("""
-    Which genes encode the O-methyltransferase and CYP450 enzymes responsible for the stepwise 
+    Which genes encode the O-methyltransferase responsible for the stepwise 
     methoxylation of flavone scaffolds into polymethoxylated flavonoids (PMFs) in 
     *Citrus reticulata* cv. Chachiensis (Chenpi), and how are they transcriptionally regulated?
     """)
@@ -214,7 +209,7 @@ def page_study_design():
     # Stepwise flow
     st.markdown("## Experimental Flow")
     steps = [
-        ("1. Genome assembly", "PacBio HiFi + Hi-C → chromosome-level assembly", "🧬"),
+        ("1. Genome assembly", "Nanopore long read sequencing + Hi-C → chromosome-level assembly", "🧬"),
         ("2. Annotation", "Repeat masking + ab initio + RNA evidence → gene models", "📋"),
         ("3. Transcriptomics", "RNA-seq across tissues/stages → expression atlas + WGCNA", "📊"),
         ("4. Metabolomics", "LC-MS/MS across same tissues → PMF quantification", "⚗️"),
@@ -238,20 +233,16 @@ def page_study_design():
     with col1:
         st.markdown("**Tissues sampled**")
         samples = {
-            "Tissue": ["Pericarp (early)", "Pericarp (mid)", "Pericarp (late)", "Leaf"],
-            "Developmental stage": ["[NEED]", "[NEED]", "[NEED]", "Mature"],
-            "PMF content": ["Low", "Medium", "High", "Trace"],
-            "Replicates": ["[NEED N]", "[NEED N]", "[NEED N]", "[NEED N]"],
+            "Tissue": ["Pericarp (early)", "Pericarp (mid)", "Pericarp (late)"],
+            "Developmental stage": ["Young fruit", "Nearly mature fruit", "Mature fruit"],
+            "Replicates": ["5", "5", "5"],
         }
         st.dataframe(pd.DataFrame(samples), use_container_width=True, hide_index=True)
     with col2:
         st.markdown("**Key contrasts**")
         st.markdown("""
-        - Pericarp early vs. late (developmental PMF accumulation)  
-        - High-PMF vs. low-PMF tissues (metabolite-driven contrast)  
-        - Pericarp vs. leaf (tissue specificity of PMF biosynthesis)
+        - Pericarp early vs. late (developmental PMF accumulation)   
         """)
-        st.markdown('<div class="placeholder">Exact sample counts: [NEED from paper methods]</div>', unsafe_allow_html=True)
 
     st.divider()
 
@@ -259,9 +250,7 @@ def page_study_design():
     st.markdown("## Data Types and Assays")
     assay_data = {
         "Modality": ["Genome", "Genome scaffolding", "Transcriptomics", "Metabolomics"],
-        "Technology": ["PacBio HiFi", "Hi-C", "Illumina RNA-seq", "LC-MS/MS"],
-        "Read length / resolution": ["[NEED] kb HiFi", "150 bp PE", "[NEED] bp PE", "MS2 fragmentation"],
-        "Coverage / depth": ["[NEED]×", "[NEED]×", "[NEED]M reads/sample", "[NEED] features"],
+        "Technology": ["Nanopore PromethION", "Hi-C", "BGISEQ RNA-seq", "LC-MS/MS"],
     }
     st.dataframe(pd.DataFrame(assay_data), use_container_width=True, hide_index=True)
 
@@ -269,8 +258,7 @@ def page_study_design():
 
     # Validation strategy
     st.markdown("## Validation Strategy")
-    st.markdown("""
-    Candidates emerging from computational prioritization (|r| > 0.8, module membership > 0.7) 
+    st.markdown(""" 
     were validated by:
     1. **Heterologous expression** in *E. coli* BL21 or *S. cerevisiae* with codon-optimized ORFs
     2. **In vitro enzyme assay** using recombinant protein + PMF substrates + SAM cofactor
@@ -321,7 +309,7 @@ def page_methods():
             st.divider()
             st.markdown("**QC checkpoints**")
             qc_map = {
-                "genome": "BUSCO completeness > 95%; LTR Assembly Index; mapping rate of RNA-seq reads to assembly > 85%",
+                "genome": "BUSCO completeness > 95%; mapping rate of RNA-seq reads to assembly > 85%",
                 "transcriptomics": "FastQC per-base quality Q > 30; mapping rate > 80%; library complexity (duplication < 30%)",
                 "metabolomics": "Blank subtraction; CV < 20% across QC pools; annotation confidence ≥ Level 2 for quantified PMFs",
                 "integration": "Module stability (signed R²); Pearson r threshold |r| > 0.8; FDR < 0.05 for module-trait correlation",
@@ -387,7 +375,7 @@ def page_pipeline():
     stages = [
         {
             "name": "1 · Raw Data Ingestion",
-            "inputs": "PacBio HiFi FASTQ, Hi-C FASTQ, RNA-seq FASTQ, LC-MS raw files",
+            "inputs": "Nanopore FASTQ, Hi-C FASTQ, RNA-seq FASTQ, LC-MS raw files",
             "outputs": "Raw FASTQ archives, .raw / .mzML metabolomics files",
             "repro": "MD5 checksums; archived in [NEED repository]",
             "color": "#e0f2fe",
@@ -416,7 +404,7 @@ def page_pipeline():
         {
             "name": "5 · Candidate Prioritization",
             "inputs": "Correlation table; module memberships; functional annotations",
-            "outputs": "Ranked candidate list; phylogenetic tree; filtered OMT/CYP450 shortlist",
+            "outputs": "Ranked candidate list; phylogenetic tree; filtered OMT shortlist",
             "repro": "Filter thresholds in `config/prioritization.yaml`; reproducible with `make candidates`",
             "color": "#fee2e2",
         },
@@ -548,12 +536,12 @@ def page_resources():
     # Primary links
     st.markdown("## Primary Links")
     link_data = {
-        "Resource": ["Paper (DOI)", "GitHub Repository", "Genome Accession", "RNA-seq Accession", "Metabolomics Accession"],
+        "Resource": ["Paper (DOI)", "Genome Accession", "RNA-seq Accession", "Metabolomics Accession"],
         "Link / Accession": [
-            r["paper_doi"], r["github"], r["genome_accession"],
+            r["paper_doi"],r["genome_accession"],
             r["rnaseq_accession"], r["metabolomics_accession"]
         ],
-        "Status": ["[NEED]", "[NEED]", "[NEED]", "[NEED]", "[NEED]"],
+        "Status": ["available", "available", "available", "available via request"],
     }
     st.dataframe(pd.DataFrame(link_data), use_container_width=True, hide_index=True)
 
