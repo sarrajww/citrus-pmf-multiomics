@@ -26,7 +26,17 @@ def load_config(mtime: float = 0):
     with open(BASE_DIR / "content_config.yaml", "r") as f:
         return yaml.safe_load(f)
 
-config_path = BASE_DIR / "content_config.yaml"
+@st.cache_data
+def load_csv(relative_path: str, mtime: float = 0) -> pd.DataFrame:
+    """Load a CSV using a path relative to the app's directory."""
+    return pd.read_csv(BASE_DIR / relative_path)
+
+def _mtime(relative_path: str) -> float:
+    """Return file mtime so cache invalidates when file changes."""
+    try:
+        return (BASE_DIR / relative_path).stat().st_mtime
+    except FileNotFoundError:
+        return 0.0
 
 CFG = load_config(_mtime("content_config.yaml"))
 
