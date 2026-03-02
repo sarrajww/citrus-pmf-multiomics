@@ -359,7 +359,7 @@ def page_pipeline():
             "name": "1 · Raw Data Ingestion",
             "inputs": "Nanopore FASTQ, Hi-C FASTQ, RNA-seq FASTQ, LC-MS raw files",
             "outputs": "Raw FASTQ archives, .raw / .mzML metabolomics files",
-            "repro": "MD5 checksums; archived in [NEED repository]",
+            "repro": "MD5 checksums",
             "color": "#e0f2fe",
         },
         {
