@@ -204,9 +204,9 @@ def page_study_design():
     # Biological question
     st.markdown("## Biological Question")
     st.markdown("""
-    Which genes encode the O-methyltransferase and CYP450 enzymes responsible for the stepwise 
+    Which genes encode the O-methyltransferase responsible for the stepwise 
     methoxylation of flavone scaffolds into polymethoxylated flavonoids (PMFs) in 
-    *Citrus reticulata* cv. Chachiensis (Chenpi), and how are they transcriptionally regulated?
+    *Citrus reticulata* cv. Chachiensis (Guangchenpi), and how are they transcriptionally regulated?
     """)
 
     st.divider()
@@ -214,7 +214,7 @@ def page_study_design():
     # Stepwise flow
     st.markdown("## Experimental Flow")
     steps = [
-        ("1. Genome assembly", "PacBio HiFi + Hi-C → chromosome-level assembly", "🧬"),
+        ("1. Genome assembly", "Nanopore sequencing + Hi-C → chromosome-level assembly", "🧬"),
         ("2. Annotation", "Repeat masking + ab initio + RNA evidence → gene models", "📋"),
         ("3. Transcriptomics", "RNA-seq across tissues/stages → expression atlas + WGCNA", "📊"),
         ("4. Metabolomics", "LC-MS/MS across same tissues → PMF quantification", "⚗️"),
