@@ -114,7 +114,6 @@ with st.sidebar:
     st.divider()
     page = st.radio("Navigate", PAGES, label_visibility="collapsed")
     st.divider()
-    st.markdown("<small>Content populated from `content_config.yaml`</small>", unsafe_allow_html=True)
 
 # ══════════════════════════════════════════════════════════════════════════════
 # PAGE: Overview
